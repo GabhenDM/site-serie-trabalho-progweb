@@ -4,7 +4,6 @@ body {
   height: 100%;
   margin: 0;
   font-family: "Roboto", Arial, "MS Trebuchet", sans-serif;
-
   font-size: 14px;
   display: flex;
   flex-direction: column;
@@ -21,7 +20,7 @@ body {
 section.menu {
   width: 100%;
   overflow: hidden;
-  background-color: #031927;
+  background-color: #3b5689;
   flex-shrink: 0;
 }
 
@@ -30,7 +29,7 @@ section.menu ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #031927;
+  background-color: #3b5689;
   display: inline;
 }
 
@@ -43,12 +42,10 @@ section.menu ul li a {
   text-align: center;
   padding: 16px;
   text-decoration: none;
-  background-color: #031927;
+  background-color: #3b5689;
   color: white;
 }
 
-section.menu ul li a:nth-child(even) {
-}
 section.menu ul li a:hover {
   color: #343f3e;
 }
@@ -59,11 +56,14 @@ section.menu img {
   display: inline;
 }
 section.main {
-  background: url(../img/background.png) center repeat-x;
-  background-size: cover;
+  background-color: #121212;
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+#home {
+  background: url(../img/background.png) top center;
+  background-size: contain;
 }
 
 .dir {
@@ -89,6 +89,7 @@ i {
 
 #main-logo {
   margin-left: 25%;
+  margin-top: 50px;
 }
 
 .content {
@@ -96,8 +97,7 @@ i {
   padding: 10px;
 }
 .content h1 {
-  margin: 0 auto;
-  margin-top: 70px;
+  margin: 80px auto;
   font-size: 34px;
   text-shadow: 0px 0px 9px #000000;
 }
@@ -107,7 +107,7 @@ table {
   min-width: 50%;
   text-align: center;
   margin: 15px auto;
-  background-color: #031927;
+  background-color: #3b5689;
 }
 table,
 th,
@@ -116,7 +116,7 @@ td {
   border: 1px solid white;
 }
 .elenco {
-  margin-top: 15px;
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -141,4 +141,165 @@ td {
 
 .container {
   padding: 2px 16px;
+}
+
+.blog-card {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  transition: all 450ms ease-out 0s;
+  overflow: hidden;
+}
+.blog-card .blog-img {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  top: -9999px;
+  left: -9999px;
+  right: -9999px;
+  bottom: -9999px;
+  margin: auto;
+  overflow: hidden;
+}
+.blog-card:hover {
+  box-shadow: 0 2px 35px rgba(0, 0, 0, 0.85);
+}
+.blog-card:hover .text-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  height: 50%;
+  top: 50%;
+  transition: all 450ms ease-in-out 0s;
+}
+.blog-card:hover p {
+  height: 60px;
+  transition: all 350ms ease-in-out 0s;
+}
+.blog-card:hover p a {
+  visibility: visible;
+}
+
+.text-overlay {
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  height: 40%;
+  top: 60%;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+  padding: 10px 12px;
+  overflow: hidden;
+  transition: all 450ms ease-in-out 0s;
+  cursor: pointer;
+}
+.text-overlay h2 {
+  color: rgba(0, 0, 0, 0.85);
+  letter-spacing: 0.0225em;
+  width: auto;
+  margin: 0;
+}
+.text-overlay p {
+  color: #555;
+  width: 380px;
+  height: 38px;
+  margin: 8px 0;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.text-overlay a {
+  color: #378aee;
+  text-decoration: none;
+  transition: all 350ms linear;
+  visibility: hidden;
+}
+.text-overlay a:hover {
+  color: #449cc5;
+  border-bottom: 1px dotted #47a8f2;
+}
+
+#noticias-content {
+  flex-direction: row;
+}
+
+#soundtrack-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#trailer-frame {
+  margin: 0 auto;
+}
+#gallerywrapper {
+  width: 640px;
+  height: 450px;
+  margin: 0 auto;
+  position: relative;
+  font-family: verdana, arial, sans-serif;
+}
+
+#gallerywrapper #gallery {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 450px;
+  width: 640px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#gallerywrapper #gallery div {
+  width: 640px;
+  height: 900px;
+  padding-top: 10px;
+  position: relative;
+}
+
+#gallerywrapper #gallery div img {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+}
+
+#gallerywrapper #gallery div h3 {
+  padding: 10px 0 0 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+#gallerywrapper #gallery div p {
+  padding: 5px 0;
+  margin: 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#gallery .previous {
+  display: inline;
+  float: left;
+  margin-left: 80px;
+  text-decoration: none;
+}
+
+#gallery .next {
+  display: inline;
+  float: right;
+  margin-right: 80px;
+  text-decoration: none;
+}
+
+.wallpaper-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#curiosidades-content ul {
+  padding: 15px;
+}
+#curiosidades-content ul li {
+  padding: 5px;
 }
